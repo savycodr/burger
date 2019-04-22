@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>MVC With Burgers!</title>
 		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
-		<title>MVC With Cats!</title>
 		<script src="https://code.jquery.com/jquery.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 		{{!-- <script src="/assets/js/cats.js"></script> --}}
 	</head>
 	<body>
-		{{{ body }}}
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-3"> </div>
+				<div class="col-sm-6"> 
+					<div class="text-center">
+						<h1>Burgers!</h1>
+						<img src="assets/img/burger-151421_1280.png" style="width:400px; height:auto;" >
+						<h2>Burgers Made To Order</h2>
+
+						<form data-id="{{this.id}}" class="update-form">
+							<div class="form-group">
+								<input type="text" id="burger" name="newBurger">
+							</div>
+
+							<button type="submit">Submit</button>
+						</form>
+						<p>Enter a burger you want to eat. Then hit submit.</p>
+						<hr>
+					</div>
+				</div>
+				<div class="col-sm-3"> </div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-2"> </div>
+				<div class="col-sm-8"> 
+					{{{ body }}}
+				</div>
+				<div class="col-sm-2"> </div>
+			</div>
+		</div>
 	</body>
 </html>
