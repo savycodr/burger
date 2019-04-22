@@ -88,7 +88,7 @@ var orm = {
 // Array of strings objColVals holds the new values that will be put into the table
 // Array of strings condition holds the conditions for updating the row
 // callback function cb holds the results
-updateOne(): function(table, objColVals, condition, cb) {
+updateOne: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
     queryString += " SET ";
