@@ -16,6 +16,16 @@ router.get("/", function(req, res) {
     res.render("index", hbsObject);
   });
 });
-  
+
+// this route will take the new burger info and write it to the database
+// the req.body.name should hold the new burger_name
+router.post("/api/burgers", function(req, res) {
+
+  console.log("The name of the new burger is " + req.body.burger_name);
+  burger.add( req.body.burger_name, function(result) {
+    // Send back the ID of the new burger
+    res.json({ id: result.insertId });
+  });
+});
 // export the router
 module.exports = router;

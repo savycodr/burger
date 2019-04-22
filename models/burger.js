@@ -14,6 +14,17 @@ var burger =  {
       // we don't want to do anything with the result until we know that the db query has returned.
       cb(res);
     })
+  },
+
+  // a function to use the orm to add a row to the burgers table from the burger database
+  // burgerName - the burger_name 
+  // cb - the callback function that holds the results
+  add:function(burgerName, cb){
+    // pass in the burger_name and devoured is false (it is just added it can't have been eaten yet)
+    orm.insertOne("burgers", ["burger_name, devoured"], [burgerName, false], function(res){
+      // we don't want to do anything with the result until we know that the db query has returned.
+      cb(res);
+    });
   }
 
 
