@@ -85,10 +85,14 @@ var orm = {
   // An example of objColVals would be {name: panther, sleepy: true}
 // Update one item into the table. 
 // String table is the table to insert into,
-// Array of strings objColVals holds the new values that will be put into the table
+// Array of strings objColVals holds the columns and new values that will be put into the table
+// example {devoured: true}
 // Array of strings condition holds the conditions for updating the row
+// example id=1
 // callback function cb holds the results
 updateOne: function(table, objColVals, condition, cb) {
+  // UPDATE BURGERS SET devoured=0 WHERE id=1
+
     var queryString = "UPDATE " + table;
 
     queryString += " SET ";

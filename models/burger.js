@@ -25,9 +25,22 @@ var burger =  {
       // we don't want to do anything with the result until we know that the db query has returned.
       cb(res);
     });
+  },
+
+  // a function to use the orm to update a row to the burgers table from the burger database
+  // the update should modify the devoured booliean from false to true
+  // burgerId - the primary key for the burger that we will update
+  // cb - the callback function that holds the results
+  update:function(burgerId, cb){
+    // pass in the burger's id and set devoured to true 
+
+    var condition = "id=" + burgerId;
+    console.log("Updating burger " + condition)
+    orm.updateOne("burgers", {devoured: true}, condition, function(res) {
+      // we don't want to do anything with the result until we know that the db query has returned.
+      cb(res);
+    });
   }
-
-
 }
 
 // Export at the end of the burger.js file.

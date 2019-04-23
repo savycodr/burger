@@ -5,11 +5,11 @@
       <h4>Burgers to Eat</h4>
       <ol>
         {{#each burgers}}
-          {{#if devoured}}
+          {{#unless devoured}}
             <li>{{burger_name}}
             <button data-id="{{this.id}}" class="eatBurger">Devour This</button>
             </li>
-          {{/if}}
+          {{/unless}}
         {{/each}}
       </ol>
     </div>
@@ -17,10 +17,10 @@
       <h4>Burgers That We Ate</h4>
       <ol>
         {{#each burgers}}
-          {{#unless devoured}}
+          {{#if devoured}}
             <li>{{burger_name}}
             </li>
-          {{/unless}}
+          {{/if}}
         {{/each}}
       </ol>
     </div>

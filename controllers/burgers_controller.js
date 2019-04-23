@@ -27,5 +27,23 @@ router.post("/api/burgers", function(req, res) {
     res.json({ id: result.insertId });
   });
 });
+
+// This put call will get the primary key of the burger from the api parameter
+// It will update that burger's devoured field to true.
+router.put("/api/burgers/:id", function(req, res) {
+  var burgerId = req.params.id;
+
+  console.log("burgerId", burgerId);
+
+  burger.update( burgerId, function(result) {
+    if (result.changedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
+});
+
 // export the router
 module.exports = router;
