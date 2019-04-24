@@ -12,7 +12,7 @@ router.get("/", function(req, res) {
     var hbsObject = {
       burgers: data
     };
-    console.log(hbsObject);
+    // console.log(hbsObject);
     // call for the index.handlebars view
     res.render("index", hbsObject);
   });
@@ -34,7 +34,7 @@ router.post("/api/burgers", function(req, res) {
 router.put("/api/burgers/:id", function(req, res) {
   var burgerId = req.params.id;
 
-  console.log("burgerId", burgerId);
+  // console.log("burgerId", burgerId);
 
   burger.update( burgerId, function(result) {
     if (result.changedRows == 0) {
