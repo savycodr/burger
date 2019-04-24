@@ -1,10 +1,8 @@
+// depend on the object relational mapping object
 var orm = require("../config/orm");
 
-// Also inside burger.js, create the code that will call the ORM functions using burger specific input for the ORM.
-
-
+// The Database Model of a burger. This object knows how to call the ORM to interact with the database to retrive the Burger data.
 var burger =  {
-
 
   // a function to use the orm to retreive all the tables from the burger database
   // cb - the callback function that holds the results

@@ -4,8 +4,8 @@ var router = express.Router();
 // import the burger javascript object which knows how to communicate to the database
 var burger = require("../models/burger");
 
-// Create all our routes and set up logic within those routes where required.
-// this is the home page
+// Create all our routes and set up logic within those routes.
+// Set up the home page
 router.get("/", function(req, res) {
   // get all of the items from the burgers table
   burger.all(function(data) {
@@ -13,6 +13,7 @@ router.get("/", function(req, res) {
       burgers: data
     };
     console.log(hbsObject);
+    // call for the index.handlebars view
     res.render("index", hbsObject);
   });
 });

@@ -14,8 +14,6 @@ $(function() {
       $("#validNameFeedback").text("Please Enter a Burger");
       return;
     }
-
-
       var burger = {
       burger_name: bName.val().trim()
     };
@@ -31,9 +29,6 @@ $(function() {
         location.reload();
       }
     );
-
-
-
   });
 
 // Update happens whenever the devour this button is selected
@@ -52,14 +47,10 @@ $(function() {
     }).then(
       function() {
         console.log("devoured burger");
-        // A different way to Reload the page to get the updated list
-        // location.assign("/");
         // Reload the page to get the updated list
         location.reload();
       }
     );
   });
-
-
 
 })
