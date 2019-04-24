@@ -7,8 +7,17 @@ $(function() {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
-    var burger = {
-      burger_name: $("#burger").val().trim(),
+    // Get the burger input and make sure it is not null
+    var bName = $("#burger");
+    // Error handling if the burger name was not input
+    if ((!bName.val()) || (bName.val().trim() === "")){
+      $("#validNameFeedback").text("Please Enter a Burger");
+      return;
+    }
+
+
+      var burger = {
+      burger_name: bName.val().trim()
     };
 
     // Send the POST request.
